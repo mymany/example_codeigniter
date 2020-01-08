@@ -7,7 +7,8 @@
 <body>
 	<h1>User Edit</h1>
 	<div id="container">
-		<?php echo form_open('user/update'); ?>
+		<?php echo form_open('user/update/'.$user->id); ?>
+			<label for="name">ID : <?php echo $user->id ?></label><br />
 			<label for="name">NAME</label>
 			<input type="input" name="name" value=<?php echo $user->name ?> /><br />
 			<label for="email">EMAIL</label>

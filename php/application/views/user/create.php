@@ -9,5 +9,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
 	<p>User Created!!!</p>
+	<div class="container">
+		<?php echo anchor('user/index', '会員一覧')?>
+	</div>
 </body>
 </html>

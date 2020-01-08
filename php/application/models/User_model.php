@@ -30,14 +30,14 @@ class User_model extends CI_Model {
         return $this->db->insert('users', $user);
     }
 
-    public function update()
+    public function update($id)
     {
         $params = $this->input->post();
         $user = [
             'name' => $params['name'],
             'email' => $params['email']
         ];
-
-        return $this->db->replace('users', $user);
+        $this->db->where('id', $id);
+        return $this->db->update('users', $user);
     }
 }

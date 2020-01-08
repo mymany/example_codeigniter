@@ -25,17 +25,17 @@ class User extends CI_Controller {
 
 	public function edit($id)
 	{
-		$this->output->enable_profiler();
 		$this->load->helper('form');
 		$this->load->model('user_model', 'user', true);
 		$data['user'] = $this->user->find_by_id($id);
 		$this->load->view('user/edit', $data);
 	}
-
-	public function update()
+	
+	public function update($id)
 	{
+		$this->load->helper('url');
 		$this->load->model('user_model', 'user', true);
-		$this->user->update();
+		$this->user->update($id);
 		$this->load->view('user/update');
 	}
 }

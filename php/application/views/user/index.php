@@ -10,10 +10,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <div id="container">
 	<h1>User Index</h1>
-
 	<div id="body">
-		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
+		<?php echo anchor('user/new', '会員登録')?>
+		<div class="user_list">
+			<?php foreach ($users as $user):?>
+				<li>id: <?php echo $user->id;?> : <?php echo $user->name;?> -> <?php echo $user->email;?></li>
+			<?php endforeach;?>
+		</div>
 	</div>
+
 </div>
 
 </body>

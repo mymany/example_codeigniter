@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<?php echo anchor('user/new', '会員登録')?>
 		<div class="user_list">
 			<?php foreach ($users as $user):?>
-				<li>id: <?php echo $user->id;?> : <?php echo $user->name;?> -> <?php echo $user->email;?></li>
+				<li>id: <?php echo anchor('user/edit/'.$user->id, $user->id) ?> : <?php echo $user->name;?> -> <?php echo $user->email;?></li>
 			<?php endforeach;?>
 		</div>
 	</div>

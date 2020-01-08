@@ -13,6 +13,12 @@ class User_model extends CI_Model {
         return $query->result();
     }
 
+    public function find_by_id($id)
+    {
+        $query = $this->db->get_where('users', ['id' => $id]);
+        return current($query->result());
+    }
+
     public function create()
     {
         $params = $this->input->post();
@@ -22,5 +28,16 @@ class User_model extends CI_Model {
         ];
 
         return $this->db->insert('users', $user);
+    }
+
+    public function update($id)
+    {
+        $params = $this->input->post();
+        $user = [
+            'name' => $params['name'],
+            'email' => $params['email']
+        ];
+        $this->db->where('id', $id);
+        return $this->db->update('users', $user);
     }
 }

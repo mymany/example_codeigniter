@@ -7,7 +7,7 @@ datastore:
 nginx: 
   build: ./nginx
   ports: 
-    - "8080:80"
+    - "80:80"
   links: 
     - php
   volumes_from:
